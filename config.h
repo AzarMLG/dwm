@@ -35,7 +35,7 @@ static const Rule rules[] = {
 	{ "Gimp",           NULL,       NULL,       0,            1,           -1 },
     { "Gscreenshot",    NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",        NULL,       NULL,       1 << 8,       0,           -1 },
-    { "TelegramDesktop", NULL,      NULL,       4,            0,           -1 },
+    { "TelegramDesktop", NULL,      NULL,       1 << 3,       0,           -1 }, /* this means open on 4th tag apparently */
 };
 
 /* layout(s) */
