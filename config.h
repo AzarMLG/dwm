@@ -31,13 +31,15 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class            instance    title       tags mask     isfloating   monitor */
+	{ "Gimp",           NULL,       NULL,       0,            1,           -1 },
+    { "Gscreenshot",    NULL,       NULL,       0,            1,           -1 },
+	{ "Firefox",        NULL,       NULL,       1 << 8,       0,           -1 },
+    { "TelegramDesktop", NULL,      NULL,       1 << 3,       0,           -1 }, /* this means open on 4th tag apparently */
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
@@ -66,7 +68,7 @@ static const char *termcmd[]  = { "st", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-    { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+    { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },                   /*Toggle bar*/
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
