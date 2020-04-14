@@ -3,7 +3,7 @@
 /* appearance */
 static const unsigned int borderpx       = 4;   /* border pixel of windows */
 static const unsigned int gappx          = 7;   /* gaps between windows */
-static const unsigned int snap           = 32;  /* snap pixel */
+static const unsigned int snap           = 16;  /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X*/
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
@@ -27,7 +27,7 @@ static const char *colors[][3]           = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7"};
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", ":)"};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -88,7 +88,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_h,          setmfact,          {.f = -0.05} },
 	{ MODKEY,                       XK_l,          setmfact,          {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_Return,     zoom,              {0} },
-	{ ControlMask,                  XK_Tab,        view,              {0} },
+	//{ ControlMask,                  XK_Tab,        view,              {0} },
 	{ MODKEY,                       XK_w,          killclient,        {0} },
 	{ MODKEY,                       XK_t,          setlayout,         {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_f,          setlayout,         {.v = &layouts[1]} },
