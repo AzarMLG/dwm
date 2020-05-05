@@ -18,12 +18,12 @@ static const char col_foreground[]       = "#F8F8F2";
 static const char col_background[]       = "#282A36";
 static const char col_darkgray[]         = "#BFBFBF";
 static const char col_lightgray[]        = "#E6E6E6";
-static const char col_red[]              = "#FF5555";
+static const char col_pink[]             = "#BD93F9";
 
 static const char *colors[][3]           = {
 	/*               fg              bg              border   */
 	[SchemeNorm] = { col_lightgray,  col_background, col_darkgray },
-	[SchemeSel]  = { col_foreground, col_red,        col_red  },
+	[SchemeSel]  = { col_foreground, col_pink,       col_pink  },
 };
 
 /* tagging */
@@ -67,7 +67,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2]            = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[]      = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_background, "-nf", col_lightgray, "-sb", col_red, "-sf", col_foreground, NULL };
+static const char *dmenucmd[]      = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_background, "-nf", col_lightgray, "-sb", col_pink, "-sf", col_foreground, NULL };
 static const char *termcmd[]       = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
@@ -89,7 +89,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,          setmfact,          {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_Return,     zoom,              {0} },
 	//{ ControlMask,                XK_Tab,        view,              {0} },
-	{ MODKEY,                       XK_w,          killclient,        {0} },
+	{ MODKEY,                       XK_q,          killclient,        {0} },
 	{ MODKEY,                       XK_t,          setlayout,         {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_f,          setlayout,         {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,          setlayout,         {.v = &layouts[2]} },
